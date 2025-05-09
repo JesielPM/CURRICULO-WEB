@@ -1,0 +1,511 @@
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+  body {
+    display: flex; /* Define o body como um contêiner flexível */
+    flex-direction: column; /* Empilha os elementos verticalmente */
+    min-height: 100vh; /* Garante que o body ocupe pelo menos toda a altura da viewport */
+    margin-bottom: 0; /* Remove bottom margin for full height */
+    padding-bottom: 50px; /* Adiciona espaço na parte inferior do body igual à altura do rodapé - ALTERADO DE 70px para 50px */
+  }
+
+  /* Sidebar adjustments */
+  .sidebar {
+    position: relative; /* Change from fixed to relative */
+    width: 100%; /* Full width */
+    height: auto; /* Auto height */
+    padding: 15px 15px 0 15px; /* Padding: 15px topo, 15px laterais, 0px inferior */
+    overflow-y: visible; /* Allow content to expand */
+    z-index: auto; /* Reset z-index */
+    margin-bottom: 0px; /* Adjust spacing between menu and content */
+  }
+
+  .photo-wrapper {
+    width: 160px; /* Smaller photo */
+    height: 160px;
+
+  }
+
+  .profile-name {
+    font-size: 1.5rem; /* Smaller name font */
+    text-align: center;
+  }
+
+  .nav-menu {
+    padding: 10px 10px 5px 10px; /* Reduzido padding-top para 0. Mantido padding laterais e 0 inferior */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza os filhos (ul, mobile-nav-controls) horizontalmente */
+  }
+
+  /* Reduzir o gap entre os botões da lista */
+  .nav-menu ul {
+    gap: 4px; /* Reduzido de 8px para 4px */
+  }
+
+  /* Reduzir a margem inferior do item ativo */
+  .nav-menu ul li.mobile-active {
+    display: block;
+    width: 60%; /* Ajustado também para manter consistência */
+    margin: 0 auto !important; /* Corrige o valor que tinha um "px" a mais */
+    box-sizing: border-box;
+  }
+
+  /* Primeira definição de .mobile-nav-controls - NÃO MODIFICAR ESTA */
+  .mobile-nav-controls {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    width: 60%;
+    padding: 0; 
+    margin-top: 5px; 
+    margin-bottom: 20px; 
+  }
+  
+  .mobile-nav-btn {
+    flex: 0 0 auto;
+    text-align: center;
+  }
+  
+  /* Container para os botões de navegação - MODIFICAR ESTA REGRA ABAIXO */
+  .mobile-nav-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px; /* Aumentado de 6px para 10px para "puxar para baixo" */
+    margin-bottom: 10px; /* Reduzido de 20px para 0px para remover espaço inferior */
+  }
+  
+  /* Estilo dos botões de navegação */
+  .mobile-nav-btn {
+    background-color: #6B757D;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    height: 44px;
+    padding: 2px 10px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .mobile-nav-btn:hover,
+  .mobile-nav-btn:active {
+    background-color: #28a745;
+    transform: translateY(-2px);
+  }
+
+  /* Content Panel adjustments - fronteira direta com o rodapé */
+  .content-panel {
+    position: relative;
+    width: 100%;
+    min-height: 52vh;
+    flex-grow: 1; /* Faz o content-panel crescer para ocupar o espaço disponível */
+    overflow-y: auto; /* Adiciona rolagem vertical se o conteúdo exceder o espaço */
+    margin-left: 0;
+    padding: 0 15px 0 15px; /* Mantém o padding existente, exceto o inferior */
+    border-radius: 0;
+    box-shadow: none;
+    margin-bottom: 0; /* Elimina margem inferior */
+  }
+
+  .content-title,
+  .content-body {
+    padding: 15px 20px;
+    max-width: 100%;
+    /*margin: 10px 0 0 0; /* Remove margem inferior */
+    -webkit-hyphens: auto; /* Para Safari */
+    -moz-hyphens: auto;    /* Para Firefox */
+    -ms-hyphens: auto;     /* Para IE/Edge */
+    hyphens: auto;         /* Padrão W3C */
+    overflow-wrap: break-word; /* Quebra palavras longas para evitar overflow */
+  }
+
+  .content-body table td {
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+    overflow-wrap: break-word;
+  }
+
+  .justified-text-block {
+    display: block; /* Necessário se o strong precisar se comportar como um bloco para justificação */
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+    overflow-wrap: break-word;
+  }
+
+  /* Último elemento dentro do content-body deve ter margem zero */
+  .content-body > *:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  /* Hidden Content adjustments */
+  .hidden-content {
+    display: none; /* Garante que o contêiner das seções ocultas não ocupe espaço na nav-menu */
+    width: 100%; /* Full width */
+  }
+
+  .hidden-content h2 {
+    font-size: 1.3rem; /* Adjust heading size */
+  }
+
+  .hidden-content p,
+  .hidden-content ul {
+    font-size: 0.9rem; /* Adjust text size */
+  }
+
+  /* Bottom Bar adjustments - Tornando o rodapé fixo */
+  .bottom-bar {
+    position: fixed; /* Torna o rodapé fixo na tela */
+    bottom: 0;       /* Alinha na parte inferior */
+    left: 0;         /* Alinha à esquerda */
+    right: 0;        /* Alinha à direita */
+    height: 50px;    /* Define a altura do contêiner do rodapé - ALTERADO DE 70px para 50px */
+    overflow: hidden;
+    margin-top: 0; 
+    z-index: 1000; /* Garante que o rodapé fique acima de outros elementos */
+    background-color: #000; /* Adiciona fundo preto ao contêiner principal do rodapé */
+  }
+
+  .footer-green {
+    display: none;
+  }
+
+  .footer-black {
+    width: 100%; 
+    height: 100% ; /* Faz o footer-black preencher toda a altura do bottom-bar */
+    padding: 15px 10px; 
+    gap: 15px; /* Mantido */
+    display: flex; /* Garante que os itens fiquem bem posicionados */
+    flex-direction: row; /* Mantém os itens em linha */
+    justify-content: space-around; /* Distribui os itens uniformemente */
+    align-items: center; /* Centraliza verticalmente */
+  }
+
+  /* Garantir que os itens de contato caibam na altura fixa */
+  .contact-item {
+    font-size: 0.9rem; /* Tamanho de fonte ligeiramente menor */
+    white-space: nowrap; /* Evita quebra de linha */
+  }
+
+  .contact-details {
+    flex-direction: column; /* Stack contact items */
+    gap: 10px; /* Adjust gap */
+    align-items: center; /* Center items */
+    text-align: center;
+  }
+
+  /* Scroll Button adjustments */
+  .btn-scroll {
+    bottom: 20px; /* Adjust position */
+    right: 15px;
+    width: 45px; /* Slightly smaller */
+    height: 45px;
+    font-size: 1.3rem;
+  }
+
+  /* PDF Panel adjustments */
+  .pdf-panel {
+    width: 100%; /* Full width */
+    margin-left: 0; /* Remove margin */
+    height: 100vh; /* Full viewport height */
+    top: 0;
+    left: 0;
+    z-index: 5000; /* Ensure it's on top */
+  }
+
+  #pdf-curriculo-container {
+     height: auto; /* Adjust height */
+     max-height: none;
+     padding: 10px;
+     margin-bottom: 15px;
+  }
+
+  .pdf-viewer {
+     height: auto; /* Adjust height */
+     padding: 10px;
+  }
+
+  #pdf-iframe {
+     width: 100%; /* Full width iframe */
+     height: 75vh; /* Adjust height */
+     border-width: 2px;
+     border-radius: 10px;
+     margin-bottom: 10px;
+  }
+
+  .pdf-controls {
+     gap: 10px; /* Adjust gap */
+     margin-top: 10px;
+  }
+
+  .print-btn, .close-btn,
+  .pdf-print-btn, .pdf-close-btn {
+     padding: 8px 12px; /* Adjust padding */
+     font-size: 0.9rem;
+  }
+
+  .pdf-panel-header {
+     padding: 10px 15px; /* Adjust padding */
+  }
+
+  /* Alteração do texto de boas-vindas para dispositivos móveis */
+  #welcome-message {
+    position: relative;
+    font-size: 1.1rem !important; /* Ajuste o tamanho da fonte se necessário */
+    visibility: hidden; /* Esconde o texto original */
+  }
+
+  #welcome-message::after {
+    content: "Selecione uma opção no menu acima 👨‍💻";
+    visibility: visible;
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+
+  /* Botão de menu hamburger */
+  .mobile-menu-toggle {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 50px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px;
+    outline: none;
+  }
+
+  .mobile-menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  /* Animação para transformar em X */
+  .mobile-menu-toggle.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .mobile-menu-toggle.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  /* Estados dos itens do menu */
+  .menu-item-hidden {
+    height: 0;
+    opacity: 0;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden;
+    pointer-events: none;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease, height 0.3s ease, margin 0.3s ease, padding 0.3s ease;
+  }
+
+  .menu-item-visible {
+    height: auto;
+    opacity: 1;
+    margin-bottom: 6px !important;
+    overflow: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+    transition: opacity 0.4s ease, transform 0.4s ease, height 0.3s ease;
+  }
+
+  /* Animação cascata para o menu aberto */
+  .nav-menu ul.menu-open li {
+    display: block !important;
+    width: 60% !important; /* Mesma largura do botão "SOBRE MIM" */
+    margin: 0 auto 4px auto !important; /* Centralizado e com margem inferior consistente */
+    background-color: #6b757d;
+    border-radius: 4px;
+    animation-name: slideDown;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    box-sizing: border-box; /* Garantir que padding não afete a largura */
+    visibility: hidden; /* Começa invisível até que a animação torne visível */
+  }
+
+  .nav-menu ul.menu-open li a {
+    color: white !important;
+    display: block;
+    padding: 8px 10px; /* Padding reduzido para caber melhor no espaço disponível */
+    text-decoration: none;
+    text-align: center; /* Centraliza o texto */
+    font-size: 0.95rem; /* Ajusta o tamanho da fonte se necessário */
+    white-space: nowrap; /* Evita quebra de linha do texto */
+    overflow: hidden; /* Esconde texto que ultrapassar o limite */
+    text-overflow: ellipsis; /* Mostra elipses (...) para texto cortado */
+  }
+
+  .nav-menu ul.menu-open li:hover,
+  .nav-menu ul.menu-open li:active {
+    background-color: #28a745; /* Cor verde ao passar o mouse */
+    transform: translateY(-2px); /* Efeito de elevação ao passar o mouse */
+    transition: background-color 0.3s, transform 0.2s;
+  }
+
+  /* Aplicar atrasos diferentes para criar o efeito cascata mais pronunciado */
+  .nav-menu ul.menu-open li:nth-child(1) { animation-duration: 0.3s; animation-delay: 0.05s; }
+  .nav-menu ul.menu-open li:nth-child(2) { animation-duration: 0.3s; animation-delay: 0.1s; }
+  .nav-menu ul.menu-open li:nth-child(3) { animation-duration: 0.3s; animation-delay: 0.15s; }
+  .nav-menu ul.menu-open li:nth-child(4) { animation-duration: 0.3s; animation-delay: 0.2s; }
+  .nav-menu ul.menu-open li:nth-child(5) { animation-duration: 0.3s; animation-delay: 0.25s; }
+  .nav-menu ul.menu-open li:nth-child(6) { animation-duration: 0.3s; animation-delay: 0.3s; }
+  .nav-menu ul.menu-open li:nth-child(7) { animation-duration: 0.3s; animation-delay: 0.35s; }
+
+  /* Botão de menu - com estilo do botão "SOBRE MIM" */
+  .mobile-menu-btn {
+    position: absolute;
+    right: 40px;
+    width: 40px;
+    height: 43px;
+    background-color: #28a745; /* Mesma cor de fundo dos botões de navegação */
+    border: none;
+    border-radius: 4px; /* Mesmo arredondamento dos botões de navegação */
+    cursor: pointer;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 6px;
+    outline: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Adiciona sombra suave */
+    transition: background-color 0.3s, transform 0.2s; /* Mesmas transições dos botões */
+  }
+
+  .mobile-menu-btn:hover,
+  .mobile-menu-btn:active {
+    background-color: #28a745; /* Cor verde ao passar o mouse, igual aos outros botões */
+    /*transform: translateY(-2px); /* Efeito de elevação ao passar o mouse */
+  }
+
+  .mobile-menu-btn span {
+    display: block;
+    width: 80%;
+    height: 3px;
+    background-color: #fff; /* Cor branca para as linhas do ícone */
+    border-radius: 2px;
+    margin: 2px 0;
+    transition: all 0.3s ease;
+  }
+
+  /* Animação para transformar em X - mantida */
+  .mobile-menu-btn.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .mobile-menu-btn.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .mobile-menu-btn.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  /* Quando ativo, manter a cor verde */
+  .mobile-menu-btn.active {
+    background-color: #28a745; /* Mantém a cor verde quando o menu está aberto */
+  }
+
+  /* Ajuste para o item ativo quando o menu estiver fechado */
+  .nav-menu ul li.mobile-active,
+  .nav-menu ul li.active-mobile-item {
+    display: block;
+    width: 60%;
+    margin: 0 auto !important; /* Corrige o valor que tinha um "px" a mais */
+    box-sizing: border-box;
+    visibility: visible;
+  }
+
+  /* Keyframes melhorados para animação de entrada (slideDown) */
+  @keyframes slideDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-15px);
+      visibility: hidden;
+    }
+    1% {
+      visibility: visible;
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+      visibility: visible;
+    }
+  }
+
+  /* Certifique-se de que todos os itens estejam inicialmente invisíveis */
+  .nav-menu ul li {
+    visibility: hidden;
+  }
+
+  /* Keyframes para animação de fechamento do menu */
+  @keyframes slideUp {
+    from {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(-15px);
+      visibility: hidden;
+    }
+  }
+
+  /* Classe auxiliar para animar o fechamento */
+  .nav-menu ul li.closing {
+    animation-name: slideUp;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+    pointer-events: none;
+  }
+
+  /* Tempos de animação para o efeito cascata de fechamento */
+  .nav-menu ul li.closing:nth-child(7) { animation-duration: 0.2s; }
+  .nav-menu ul li.closing:nth-child(6) { animation-duration: 0.25s; }
+  .nav-menu ul li.closing:nth-child(5) { animation-duration: 0.3s; }
+  .nav-menu ul li.closing:nth-child(4) { animation-duration: 0.35s; }
+  .nav-menu ul li.closing:nth-child(3) { animation-duration: 0.4s; }
+  .nav-menu ul li.closing:nth-child(2) { animation-duration: 0.45s; }
+  .nav-menu ul li.closing:nth-child(1) { animation-duration: 0.5s; }
+
+  /* Esconde o texto desktop e mostra o texto mobile apenas no mobile */
+  .footer-black .desktop-text {
+    display: none !important;
+  }
+  .footer-black .mobile-text {
+    display: inline !important;
+  }
+}
+
+/* No desktop, faz o contrário (opcional, caso queira garantir) */
+@media (min-width: 769px) {
+  .footer-black .desktop-text {
+    display: inline !important;
+  }
+  .footer-black .mobile-text {
+    display: none !important;
+  }
+}

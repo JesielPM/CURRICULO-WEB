@@ -1,0 +1,128 @@
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Overlay oculto por padrão */
+.modal-overlay {
+  display: none;          /* ← esconde o overlay quando NÃO está ativo */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2000;
+}
+
+#processo-modal-overlay {
+  display: none; /* JS controla para 'flex' ao abrir e 'none' após fechar */
+  visibility: hidden; /* Estado base, invisível */
+  opacity: 0;       /* Estado base, transparente */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  /* Transição para quando .active é removido */
+  transition: opacity 0.4s ease-in-out, visibility 0s linear 0.4s; /* visibility muda após opacity */
+}
+
+.modal-content {
+  position: relative;
+  width: 98vw;
+  max-width: 90vw;
+  height: 90vh;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  
+  /* Animação inicial */
+  opacity: 0;
+  transform: scale(0.7);
+  transition: opacity 0.4s cubic-bezier(.4,0,.2,1), transform 0.4s cubic-bezier(.4,0,.2,1);
+}
+
+html[data-theme="dark"] .modal-content,
+.dark-mode .modal-content,
+.night-mode .modal-content,
+.dark-theme .modal-content,
+body.dark .modal-content,
+.dark .modal-content {
+  background-color: #222 !important;
+  color: #fff !important;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 26px;
+  padding: 8px 15px;
+  background: #222;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+html[data-theme="dark"] .close-button,
+.dark-mode .close-button,
+.night-mode .close-button,
+.dark-theme .close-button,
+body.dark .close-button,
+.dark .close-button {
+  background-color: white !important;
+  color: black !important;
+  font-weight: bold !important;
+  border: 1px solid #333 !important;
+}
+
+html[data-theme="dark"] .close-button:hover,
+.dark-mode .close-button:hover,
+.night-mode .close-button:hover,
+.dark-theme .close-button:hover,
+body.dark .close-button:hover,
+.dark .close-button:hover {
+  background-color: #f0f0f0 !important;
+  color: #111 !important;
+}
+
+#processo-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Overlay visível */
+#processo-modal-overlay.active {
+  opacity: 1;
+  visibility: visible; /* Torna visível quando .active está presente */
+  /* Transição para quando .active é adicionado */
+  transition: opacity 0.4s ease-in-out; /* visibility pode ser imediata ou ter sua própria transição */
+}
+
+.modal-overlay.active .modal-content {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@media (max-width: 768px) {
+  .modal-content {
+    width: 95%;
+    height: 85vh;
+  }
+}

@@ -1,0 +1,510 @@
+/* Estilos base responsivos */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Open Sans', sans-serif;
+  overflow-x: hidden;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  margin-bottom: 2.5cm;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: calc(16.67% + 1cm);
+  height: 100vh;
+  background: #000;
+  color: #fff;
+  overflow-y: auto;
+  z-index: 100;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+/* Container da foto */
+.photo-wrapper {
+  width: 180px;
+  height: 180px;
+  margin: 0 auto 10px;
+  border-radius: 50%;
+  background-color: #28a745;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.photo-wrapper img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  object-fit: cover;
+}
+
+.profile-name {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* Menu navegação */
+.nav-menu {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 10px;
+}
+
+.nav-menu ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-menu li {
+  width: 90%;
+  margin-bottom: 0;
+}
+
+.nav-menu a {
+  display: block;
+  width: 100%;
+  margin: 0;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  background: #6B757D;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  text-align: center;
+  white-space: normal;
+  line-height: 1.2;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+  background: #28a745;
+  border-color: #28a745;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Conteúdo oculto */
+.hidden-content {
+  display: none;
+  width: 90%;
+  text-align: center;
+}
+
+.hidden-content section {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hidden-content h2 {
+  font-size: 1.5rem;
+  color: #28a745;
+  margin-bottom: 10px;
+}
+
+.hidden-content p,
+.hidden-content ul {
+  color: #ddd;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.hidden-content ul {
+  padding-left: 20px;
+}
+
+.hidden-content li {
+  margin-bottom: 5px;
+}
+
+.hidden-content table {
+  margin: 0 auto;
+}
+
+/* Painel direito */
+.content-panel {
+  width: calc(83.33% - 1cm);
+  min-height: 100vh;
+  padding: 20px;
+  background: #28a745;
+  color: #000;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: calc(16.67% + 1cm);
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
+.content-title,
+.content-body {
+  background: #fff;
+  color: #000;
+  padding: 20px 30px;
+  border: 3px solid transparent;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  max-width: 800px;
+  width: 100%;
+  margin: 5px 0;
+  transition: border 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  will-change: opacity, transform; /* Otimiza performance da animação */
+}
+
+.content-title {
+  text-align: center;
+}
+
+.content-body {
+  text-align: justify;
+}
+
+.content-title:hover,
+.content-title:focus-within,
+.content-body:hover,
+.content-body:focus-within {
+  border-color: #fff;
+  box-shadow: 0 0 12px #fff;
+}
+
+/* Estado inicial para elementos sendo carregados */
+.content-loading {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Animação de fade-in */
+@keyframes fadeIn {
+  from { 
+    opacity: 0;
+    transform: translateY(10px); 
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0); 
+  }
+}
+
+@keyframes fadeOut {
+  from { 
+    opacity: 1;
+    transform: translateY(0); 
+  }
+  to { 
+    opacity: 0;
+    transform: translateY(-10px); 
+  }
+}
+
+/* Classes para controlar as animações */
+.content-transition-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.content-transition-out {
+  animation: fadeOut 0.3s ease forwards;
+  pointer-events: none;
+}
+
+/* Botão scroll */
+.btn-scroll {
+  position: fixed;
+  bottom: calc(1.5cm + 20px);
+  right: 20px;
+  background: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  transition: background 0.3s;
+  z-index: 1000;
+}
+
+.btn-scroll:hover {
+  background: #1e7e34;
+}
+
+/* Footer bar */
+.bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1.5cm;
+  display: flex;
+  z-index: 999;
+}
+
+.footer-green {
+  width: calc(16.67% + 1cm);
+  height: 100%;
+  background-color: #28a745;
+  margin-left: 0;
+  position: absolute;
+  left: 0;
+}
+
+.footer-black {
+  width: calc(83.33% - 1cm);
+  height: 100%;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  position: absolute;
+  right: 0;
+}
+
+/* Style for footer links */
+.footer-black a.contact-item {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-black a.contact-item:hover {
+  color: #28a745;
+  text-decoration: underline;
+}
+
+.contact-info {
+  position: relative;
+  height: 100%;
+}
+
+.contact-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  height: 100%;
+  padding: 5px 20px;
+}
+
+/* PDF Button Styling */
+.nav-menu a.pdf-button {
+  background: linear-gradient(135deg, #ff4b1f, #ff9068);
+  border: none;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 10px rgba(255, 75, 31, 0.2);
+}
+
+.nav-menu a.pdf-button:hover {
+  background: linear-gradient(135deg, #ff3d00, #ff7043);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 75, 31, 0.3);
+}
+
+.nav-menu a.pdf-button:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.nav-menu a.pdf-button:hover:before {
+  left: 100%;
+}
+
+/* PDF Container */
+.pdf-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #28a745;
+  width: 100%;
+  min-height: 80vh;
+  padding: 40px 0;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  margin: 0 auto;
+}
+
+#pdf-curriculo-container {
+  position: relative;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 82vh; /* Aumentado de 75vh para 82vh */
+  padding-top: 0;
+  border-radius: 16px; /* Reduzido de 18px para 16px */
+  box-sizing: border-box;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.pdf-toolbar {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.pdf-viewer {
+  background: #fff;
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  width: 100%;
+  max-width: 900px;
+  height: 0vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: calc(100vh - 100px);
+  padding: 10px; /* Reduzido de 20px para 10px */
+}
+
+#pdf-iframe {
+  width: 95%; /* Aumentado de 90% para 95% para reduzir áreas laterais */
+  height: 85vh; /* Aumentado de 80vh para 85vh para reduzir área inferior */
+  border: 2px solid #222; /* Reduzido de 4px para 2px */
+  border-radius: 12px; /* Reduzido de 18px para 12px */
+  background: #fff;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  margin-bottom: 12px; /* Reduzido de 16px para 12px */
+}
+
+.pdf-controls {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px; /* Reduzido de 16px para 8px */
+}
+
+/* Ajuste para melhor visualização em dispositivos maiores */
+@media (min-width: 1200px) {
+  #pdf-iframe {
+    width: 1200px; /* Valor original em telas maiores */
+    max-width: 1200px; /* Limita a largura máxima */
+    margin-bottom: 50px; /* Centraliza o iframe */
+  }
+  
+  .pdf-viewer {
+    padding: 5px; /* Reduz ainda mais o padding em telas grandes */
+  }
+}
+
+/* Botões do PDF */
+.print-btn, .close-btn,
+.pdf-print-btn, .pdf-close-btn {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 6px;
+  background: #222;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.pdf-print-btn:hover,
+.pdf-close-btn:hover,
+.print-btn:hover, 
+.close-btn:hover {
+  background: #28a745;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.pdf-panel {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: calc(83.33% - 1cm);
+  height: 100vh;
+  background: #222;
+  box-shadow: -2px 0 16px rgba(0,0,0,0.3);
+  z-index: 3000;
+  flex-direction: column;
+  margin-left: calc(16.67% + 1cm);
+}
+
+.pdf-panel.open {
+  display: flex;
+}
+
+.pdf-panel-header {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  background: #111;
+  padding: 12px 16px;
+}
+
+.pdf-panel iframe {
+  flex: 1;
+  width: 100%;
+  border: none;
+  background: #fff;
+}
+
+/* Controle de exibição das versões de texto para o rodapé */
+.desktop-text {
+  display: inline-block;
+}
+
+.mobile-text {
+  display: none;
+}
+
+/* Importação do arquivo de estilos para dispositivos móveis */
+@import url('VERSAO_MOBILE.CSS');

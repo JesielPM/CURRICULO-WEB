@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curriculo - Jesiel Matos</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./Styles/STYLE.CSS">
+  <link rel="stylesheet" href="./Styles/STYLE_IFRAME.CSS">
+  <link rel="stylesheet" href="./Styles/VERSAO_MOBILE.CSS">
+  <script src="./Functions/SCRIPT.JS" defer></script>
+  <script src="./Functions/IFRAME_FUNCTION.JS" defer></script>
+  <script src="./Functions/IMPRIMIR_FUNCTION.JS" defer></script>
+  <script src="./Functions/MOBILE_PDF_FIX.JS" defer></script>
+  <script src="./Functions/MOBILE_MENU.JS" defer></script>
+  <script src="./Functions/VERS.MOBILE.JS" defer></script>
+  <script src="./Functions/Transitions.js" defer></script>
+
+
+</head>
+<body>
+  <!-- Sidebar: foto, menu, conteúdo oculto e dados pessoais -->
+  <div class="sidebar">
+    <header>
+      <div class="photo-wrapper">
+        <img src="Images/foto_fundo_branco1.jpeg" alt="Foto de Jesiel Matos">
+      </div>
+      <div class="profile-name">JESIEL MATOS</div>
+    </header>
+    <nav class="nav-menu">
+    <ul>
+        <li><a href="#" data-section="sobre-mim">🙎‍♂️ SOBRE MIM</a></li>
+        <li><a href="#" data-section="educacao">🎓 EDUCAÇÃO</a></li>
+        <li><a href="#" data-section="experiencia">💼 EXPERIÊNCIAS</a></li>
+        <li><a href="#" data-section="cursos">📚 CURSOS</a></li>
+        <li><a href="#" data-section="habilidades">⚙️ HABILIDADES</a></li>
+        <li>
+          <!-- Botão Carta de Apresentação -->
+          <a href="#" id="carta-apresentacao-btn">
+            📝 CARTA DE APRESENTAÇÃO
+          </a>
+        </li>
+        <li>
+          <a href="#" class="pdf-button">
+            🖨️ VERSÃO PDF
+          </a>
+        </li>
+      </ul>
+
+    <!-- Conteúdo oculto – seções armazenadas na sidebar -->
+    <div class="hidden-content">
+      <section id="sobre-mim">
+        <h2>🙋‍♂️ SOBRE MIM</h2>
+        <table>
+          <tr>
+            <td valign="top"></td>
+            <td>
+              <strong>
+                Sou um profissional calmo, curioso e estratégico, motivado por entender o "porquê" das coisas. Enfrento desafios com foco, criatividade e aprendizado contínuo, mantendo decisões racionais mesmo sob pressão. Colaborativo e comunicativo, valorizo o trabalho em equipe, atuando com responsabilidade, atenção aos detalhes, proatividade e adaptabilidade para gerar resultados consistentes e valor real à organização.
+              </strong>
+            </td>
+          </tr>
+        </table>
+      </section>
+      <section id="educacao">
+        <h2>EDUCAÇÃO</h2>
+        <table style="width: 100%; line-height: 1.6;">
+          <tr>
+            <td valign="top">🏛️</td>
+            <td>
+              <strong>CENTRO UNIVERSITÁRIO ESTÁCIO</strong><br>
+              Gestão em Tecnologia da Informação<br>
+              2024 - Atual
+            </td>
+          </tr>
+          <tr>
+            <td valign="top">🏛️</td>
+            <td>
+              <strong>UNIVERSIDADE FEDERAL DO CEARÁ</strong><br>
+              Engenharia Civil<br>
+              2018 - 2020 (Trancado)
+            </td>
+          </tr>
+        </table>
+      </section>
+      <section id="experiencia">
+        <h2>EXPERIÊNCIAS</h2>
+        <table style="width: 100%; line-height: 1.6;">
+      
+          <tr>
+            <td valign="top">💼</td>
+            <td>
+              <strong>GRUPO PRESERVE LISERVE</strong><br>
+              <strong>Conferente dos Serviços Bancários</strong><br>
+              <strong>2021 - 2024</strong>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top">•</td>
+            <td>
+              Recebimento, conferência e tratamento de numerários, assegurando a integridade e a conformidade dos valores processados.
+            </td>
+          </tr>
+          <tr>
+            <td valign="top">•</td>
+            <td>
+              Condicionamento adequado de cédulas, seguindo rigorosamente os padrões operacionais e de segurança exigidos pelo setor bancário.
+            </td>
+          </tr>
+          <tr>
+            <td valign="top">•</td>
+            <td>
+              Crédito de clientes junto aos bancos, executando com agilidade as operações e garantindo que os valores fossem lançados com exatidão.
+            </td>
+          </tr>
+          <tr>
+            <td valign="top">•</td>
+            <td>
+              Realização de crédito de clientes junto aos bancos, seguindo rigorosamente os padrões operacionais e de segurança exigidos pelo setor bancário.
+            </td>
+          </tr>
+          <tr>
+            <td valign="top">•</td>
+            <td>
+              Solicitação e acompanhamento de transações bancárias, com foco em precisão e eficiência, mantendo sempre uma comunicação clara e profissional com as instituições financeiras envolvidas.
+            </td>
+          </tr>
+          <tr>
+            <td valign="top">💼</td>
+            <td>
+              <strong>ESTÁGIO</strong><br>
+              <strong>Universidade Federal do Ceará</strong><br>
+              <strong>2018 - 2019</strong>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top">•</td>
+            <td>
+              Bolsista de Iniciação Acadêmica no Laboratório de Ensaios Estruturais (LEE) – Realização de análise e teste de materiais e estruturas, simulando condições reais para avaliar sua resistência e comportamento.
+            </td>
+          </tr>
+          <tr>
+            <td valign="top">•</td>
+            <td>
+              Cocriador da célula de ensino para egressos do curso de Engenharia Civil – Célula voltada para o ensino coletivo de Física Fundamental em um ambiente dinâmico e colaborativo, onde o aprendizado se desenvolve por meio da interação entre seus membros.
+            </td>
+          </tr>
+        </table>
+      </section>
+      <section id="cursos">
+        <h2>CURSOS</h2>
+        <table>
+            <tr>
+              <td valign="top">📘</td>
+              <td><strong>Excel Intermediário.</strong></td>
+            </tr>
+            <tr>
+              <td valign="top">📙</td>
+              <td><strong>Português Avançado.</strong></td>
+            </tr>
+            <tr>
+              <td valign="top">📗</td>
+              <td><strong>Redes: dos conceitos básicos à criação de uma intranet (ALURA).</strong></td>
+            </tr>
+            <tr>
+              <td valign="top">📕</td>
+              <td><strong>Web moderno completo (Udemy) - Em andamento.</strong></td>
+            </tr>
+          </table>
+      </section>
+      <section id="habilidades">
+        <h2>HABILIDADES</h2>
+        <p><strong>🗣️ Boa Comunicação.</strong></p>
+        <p><strong>⚡ Raciocínio Rápido.</strong></p>
+        <p><strong🔢 Facilidade com números.</strong></p>
+        <p><strong>🧘 Inteligência emocional</strong></p>
+        <p><strong>📝 Boa produção textual.</strong></p>
+      </section>
+      <section id="carta-apresentacao">
+        <h2>CARTA DE APRESENTENTAÇÃO</h2>
+        <p><strong>Prezado recrutador,</strong></p>
+        <p>Sou um profissional comprometido e apaixonado por tecnologia, com forte habilidade de adaptação, raciocínio lógico e trabalho em equipe. Busco uma oportunidade que me permita aplicar meus conhecimentos técnicos e continuar crescendo profissionalmente.</p>
+        <p>Coloco-me à disposição para conversarmos melhor sobre como posso contribuir com sua equipe.</p>
+        <p><strong>Atenciosamente,</strong><br>Jesiel Matos</p>
+      </section>
+    </div>
+  </div>
+
+  <!-- Painel Direito -->
+  <div class="content-panel" id="rightPanel">
+    <p id="welcome-message" style="font-size: 1.2rem; text-align: center; margin-top: 40px; color: #FFFFFF;">
+      Selecione uma opção no menu ao lado 👨‍💻
+    </p>
+    <!-- Corrija o container do PDF -->
+    <div id="pdf-curriculo-container" style="display:none;">
+      <div class="pdf-viewer">
+        <iframe id="pdf-iframe"></iframe>
+        <div class="pdf-controls">
+          <button class="pdf-print-btn">🖨️ Imprimir</button>
+          <button class="pdf-close-btn">✖ Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Botão Voltar ao Topo -->
+  <button class="btn-scroll" id="btnScroll">&#8679;</button>
+
+  <!-- Container do IFRAME para Carta de Apresentação -->
+<!-- Modal overlay container for the iframe -->
+<div id="processo-modal-overlay" class="modal-overlay">
+  <div class="modal-content">
+      <button id="close-modal-btn" class="close-button" aria-label="Fechar">
+        ❌SAIR
+      </button>
+      <iframe id="processo-iframe" src="CartaDeApresentacao/CartaDeApresentacao.html" frameborder="0"></iframe>
+  </div>
+</div> <!-- Fim da .modal-content principal -->
+
+  <!-- Footer -->
+  <footer class="bottom-bar">
+    <div class="footer-green"></div>
+    <div class="footer-black">
+      <a href="https://www.google.com.br/maps/place/R.+Gustavo+Sampaio,+237..." 
+         target="_blank" 
+         rel="noopener noreferrer" 
+         class="contact-item address">
+        <span class="mobile-text">📍 Endereço</span>
+        <span class="desktop-text">📍 Rua Gustavo Sampaio-237</span>
+      </a>
+      <a href="https://wa.me/5585999266978" 
+         target="_blank" 
+         rel="noopener noreferrer" 
+         class="contact-item phone">
+        <span class="mobile-text">📞 Contato</span>
+        <span class="desktop-text">📞 (85)999266978</span>
+      </a>
+      <a href="https://mail.google.com/mail/u/0/?fs=1&to=jesielmatos13@gmail.com&tf=cm"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="contact-item email">
+        <span class="mobile-text">📧 Email</span>
+        <span class="desktop-text">📧 jesielmatos13@gmail.com</span>
+      </a>
+    </div>
+  </footer>
+  
+</body>
+</html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">

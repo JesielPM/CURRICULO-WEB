@@ -1,0 +1,269 @@
+/* Variáveis CSS para o modo noturno (padrão) com acentos verdes */
+:root {
+  --bg-color: #121212;
+  --text-color: #CCCCCC; /* Texto um pouco mais escuro para melhor legibilidade no modo noturno */
+  --accent-color: #7ED957; /* Verde original para o modo noite */
+  --accent-light: #a2f35b; /* Verde mais claro para hover no modo noite */
+  --card-bg: #1e1e1e;
+  --footer-bg: #1e1e1e;
+  --button-text: #121212;
+}
+/* Variáveis para o modo diurno com acentos verdes mais escuros */
+.light-mode {
+  --bg-color: #FFFFFF;
+  --text-color: #121212;
+  /* Ajuste dos tons de verde para ficarem mais escuros e confortáveis à leitura */
+  --accent-color: #4C9A33;  /* Verde mais escuro para o modo dia */
+  --accent-light: #3E7C28;  /* Variante correspondente para hover no modo dia */
+  --card-bg: #F5F5F5;
+  --footer-bg: #F5F5F5;
+  --button-text: #121212;
+}
+/* Estilização geral */
+body {
+  margin: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  line-height: 1.45;
+}
+/* Cabeçalho fixo com padding reduzido */
+.header-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--bg-color);
+  padding: 15px 8vw;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.header-text h2 {
+  margin: 0;
+  font-size: clamp(24px, 5vw, 42px);
+  color: #28a745;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+  padding-bottom: 5px;
+}
+.header-line {
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, #28a745, var(--accent-light));
+  margin-bottom: 5px;
+  border-radius: 2px;
+}
+.header-text p {
+  margin: 4px 0 0 0;
+  font-size: clamp(18px, 4vw, 32px);
+  color: var(--text-color);
+  font-weight: 400;
+}
+.header-photo {
+  flex-shrink: 0;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #FFFFFF; /* Mantém a borda branca */
+  box-shadow: 0 0 0 3px #28a745;
+}
+.header-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* Container principal: margem superior ajustada */
+.container {
+  padding: 5vw 8vw;
+  text-align: justify;
+  box-sizing: border-box;
+  margin-top: 140px;
+  margin-bottom: 80px;
+}
+/* ==================== BOTÕES GERAIS ==================== */
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  margin: 0 auto 20px auto;
+  text-align: center;
+}
+.toggle-button,
+.expand-collapse-button,
+#mode-toggle {
+  background-color: #28a745;
+  color: var(--button-text);
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.3s;
+  font-size: 16px;
+}
+
+/* Adicione esta regra para a cor do texto no modo claro */
+.light-mode .toggle-button,
+.light-mode .expand-collapse-button,
+.light-mode #mode-toggle {
+  color: #FFFFFF; /* Cor branca para o texto no modo claro */
+}
+
+.toggle-button:hover,
+.expand-collapse-button:hover,
+#mode-toggle:hover {
+  background-color: var(--accent-light);
+  transform: scale(1.05);
+}
+/* ==================== CARDS (SEÇÕES) ==================== */
+.card {
+  border: 1px solid #28a745;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: var(--card-bg);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  transition: transform 0.3s;
+}
+.card:hover {
+  transform: translateY(-3px);
+}
+.card h3 {
+  color: #28a745;
+  margin: 0 0 6px 0;
+  font-size: 24px;
+}
+/* ==================== CONTEÚDO DAS SEÇÕES ==================== */
+.section-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.6s ease, opacity 0.6s ease;
+  opacity: 0;
+}
+.section-content.open {
+  opacity: 1;
+}
+/* ==================== BOTÕES FIXOS DE NAVEGAÇÃO ==================== */
+.back-to-top {
+  position: fixed;
+  bottom: 70px;
+  left: 20px;
+  background-color: #28a745;
+  color: var(--button-text);
+  padding: 10px 15px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  transition: background-color 0.3s, transform 0.3s;
+  font-weight: bold;
+}
+.back-to-top:hover {
+  background-color: var(--accent-light);
+  transform: scale(1.1);
+}
+.back-to-bottom {
+  position: fixed;
+  bottom: 70px;
+  right: 20px;
+  background-color: #28a745;
+  color: var(--button-text);
+  padding: 10px 15px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  transition: background-color 0.3s, transform 0.3s;
+  font-weight: bold;
+}
+.back-to-bottom:hover {
+  background-color: var(--accent-light);
+  transform: scale(1.1);
+}
+/* ==================== BOTÃO RECOLHER TUDO NO FINAL ==================== */
+.bottom-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+/* ==================== RODAPÉ FIXO ==================== */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  background-color: var(--footer-bg);
+  font-size: 16px;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.5);
+}
+/* Media Query para telas pequenas */
+.mobile-header-empty {
+  display: none;
+}
+@media (max-width: 480px) {
+  .mobile-header-empty {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 50px;
+    background: #000;
+    z-index: 1100;
+  }
+  .header-container {
+    top: 50px;
+    margin-top: 0;
+  }
+  .container {
+    margin-top: 150px !important;
+  }
+  .header-container {
+    padding: 8px 4vw;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 0px;
+
+  }
+  .header {
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .header-text h2 {
+    font-size: clamp(18px, 6vw, 24px);
+  }
+  .header-text p {
+    font-size: clamp(14px, 4vw, 18px);
+  }
+  .header-photo {
+    width: 60px;
+    height: 60px;
+    border: 2px solid #FFFFFF;
+    box-shadow: 0 0 0 2px #28a745;
+  }
+  .container {
+    margin-top: 150px;
+  }
+  .toggle-button,
+  .expand-collapse-button,
+  #mode-toggle {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+  .card h3 {
+    font-size: 18px;
+  }
+}

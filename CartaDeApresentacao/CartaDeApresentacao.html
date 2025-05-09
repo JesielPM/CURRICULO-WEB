@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>Carta de Apresentação – Jesiel Matos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Importação de fonte personalizada -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="STYLE_CARTA.CSS">
+  <script src="SCRIPT_CARTA.JS" defer></script>
+
+
+</head>
+<body>
+  <!-- NOVA DIV PARA MOBILE, ACIMA DO HEADER ORIGINAL -->
+  <div class="mobile-header-empty"></div>
+  <div class="header-container">
+    <div class="header">
+      <div class="header-text">
+        <h2>CARTA DE APRESENTAÇÃO</h2>
+        <div class="header-line"></div>
+        <p>Jesiel Matos</p>
+      </div>
+      <div class="header-photo">
+        <!-- Nova URL da foto -->
+        <img src="../images/foto_fundo_branco1.jpeg" alt="Foto de Jesiel Matos">
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Botões "Expandir Tudo", "Recolher Tudo", "Dia/Noite" e "Versão PDF" -->
+    <div class="button-group">
+      <button class="expand-collapse-button" onclick="expandAll()">🔽 Expandir Tudo</button>
+      <button class="expand-collapse-button" onclick="collapseAll()">🔼 Recolher Tudo</button>
+      <button id="mode-toggle" onclick="toggleMode()">☀️Dia</button>
+      <button class="toggle-button" onclick="downloadPDF()">🖨️ Versão PDF</button>
+    </div>
+
+    <!-- Seção: Da Personalidade e Habilidades -->
+    <div class="card">
+      <h3>🧠 Da Personalidade e Habilidades</h3>
+      <div id="sec1" class="section-content">
+        <p>Sou bastante curioso, sempre buscando entender o “porquê” das coisas, e apesar das dificuldades inerentes à vida, tento manter-me resiliente. Gosto genuinamente de explorar novas ideias e enfrentar desafios, o que me impulsiona a estar constantemente estudando e aprendendo. Tenho um temperamento leve e priorizo a estabilidade, pois acredito que um ambiente equilibrado favorece a produtividade. Possuo raciocínio rápido e uma boa capacidade de adaptação a diferentes cenários, além de saber trabalhar bem em equipe, contribuindo ativamente e mantendo a serenidade mesmo em situações de alta pressão, o que me permite tomar decisões ponderadas. Considero ter um perfil colaborativo, sou comprometido com os objetivos, proativo na identificação de necessidades e atento aos detalhes – características que considero essenciais para agregar valor real e consistente às atividades realizadas nos ambientes em que estou inserido.
+        </p>
+      </div>
+      <button class="toggle-button" onclick="toggleSection('sec1', this)">📖 Clique aqui para ler</button>
+    </div>
+
+    <!-- Seção: Da Trajetória Acadêmica -->
+    <div class="card">
+      <h3>🎓 Da Trajetória Acadêmica</h3>
+      <div id="sec2" class="section-content">
+        <p>O começo de minha trajetória acadêmica foi um pouco conturbado. Vindo do interior do Estado do Ceará, enfrentei diversas dificuldades para poder cursar Engenharia Civil em uma faculdade pública e não consegui finalizar o curso. Por razões pessoais e por necessitar trabalhar, não pude dar continuidade ao curso por ser de tempo integral e, assim, tive que abandoná‑lo. Contudo, durante esse período pude absorver conhecimentos valiosos que ampliaram minha visão sobre o universo acadêmico da construção e da engenharia. Aprendi, por exemplo, os fundamentos da resistência dos materiais e a importância de projetar estruturas seguras e eficientes, compreendendo como cada detalhe impacta a estabilidade de uma obra.</p>
+        <p>Minha facilidade com os números e com o raciocínio lógico se destacou durante os estudos, permitindo‑me absorver conceitos complexos com rapidez e eficácia.  O conhecimento adquirido me capacitou a solucionar problemas de forma criativa e a desenvolver projetos com um olhar crítico, habilidades que considero fundamentais não só para a engenharia, mas para toda a área de exatas.</p>
+        <p>Além disso, tive contato com metodologias de gerenciamento de obras e planejamento, o que me ensinou a importância da organização, da comunicação e do trabalho em equipe. Essa bagagem, aliada à facilidade que demonstrei em entender e aplicar conceitos matemáticos e científicos, reforça minha capacidade de me adaptar e contribuir de maneira significativa em diferentes contextos profissionais e acadêmicos. Essa experiência me preparou para encarar desafios de forma resiliente e adaptativa, evidenciando que, mesmo com uma trajetória não convencional, o aprendizado técnico e a aptidão para a área das exatas são diferenciais que impulsionam minha carreira e meu crescimento pessoal.</p>
+        <p>Atualmente, curso Gestão da Tecnologia da Informação, o que tem ampliado meu entendimento sobre sistemas, redes e infraestrutura tecnológica. Descobri recentemente que a área de TI, especialmente o ramo de redes e desenvolvimento web, ressoam fortemente com minhas habilidades e paixões, pois alia elementos de exatas e lógica, áreas nas quais sempre tive facilidade.</p>
+        <p>A grade curricular, que abrange desde pensamento computacional e segurança cibernética até arquitetura de computadores e desenvolvimento web, me oferece uma visão abrangente que complementa e valoriza os conhecimentos adquiridos durante minha trajetória na Engenharia Civil. Naquela época, aprendi fundamentos sólidos como a análise de estruturas, a importância da precisão nos cálculos e o detalhamento dos projetos, habilidades que se traduzem diretamente na capacidade de resolver problemas na área de TI.</p>
+        <p>Ademais, os cursos complementares que concluí – como “Redes: dos Conceitos Iniciais à Criação de uma Intranet” e “Excel Intermediário” – fortaleceram minha base técnica e desenvolveram meu raciocínio analítico. Combinando essas experiências com o domínio avançado da língua portuguesa, sinto que consigo articular e comunicar soluções com clareza, contribuindo para o trabalho em equipe e para a implementação de projetos.</p>
+        <p>Essa nova fase acadêmica tem sido extremamente enriquecedora, pois me permite unir o rigor das exatas com a inovação tecnológica, demonstrando que o conhecimento técnico adquirido em diferentes áreas pode ser adaptado e aplicado de forma sinérgica. Estou particularmente entusiasmado com a de TI, onde vejo grande potencial para aplicar meu pensamento crítico e facilidade com números, consolidando minha evolução tanto acadêmica quanto profissional.</p>  
+      </div>
+      <button class="toggle-button" onclick="toggleSection('sec2', this)">📖 Clique aqui para ler</button>
+    </div>
+
+    <!-- Seção: Da Trajetória Profissional -->
+    <div class="card">
+      <h3>💼 Da Trajetória Profissional</h3>
+      <div id="sec3" class="section-content">
+      <p>Minhas experiências profissionais e acadêmicas têm sido enriquecedoras, proporcionando um desenvolvimento diversificado de competências que podem agregar valor em diversas funções, independentemente da área de atuação. Cada etapa da minha trajetória me ensinou lições únicas, que, somadas, formaram uma base consistente tanto de hard skills quanto de soft skills.</p>
+      <p>Durante meu estágio na Universidade Federal do Ceará, e como bolsista de Iniciação Acadêmica no Laboratório de Ensaios Estruturais, tive a oportunidade de trabalhar em projetos reais, onde aprendi a aplicar teorias em situações práticas. Essa vivência aprimorou minha capacidade de produzir e gerenciar projetos, além de melhorar significativamente minha produção textual, ferramenta fundamental para uma comunicação clara e eficiente em qualquer ambiente profissional.</p>
+      <p>Um dos marcos mais significativos da minha trajetória foi a participação no Grupo Preserve, onde atuei como conferencista e exercitei, de forma intensa, tanto minhas hard skills quanto minhas soft skills. Nesse ambiente, fui responsável por atividades críticas como o recebimento, conferência, tratamento e condicionamento de numerários, a realização de crédito de clientes junto aos bancos e a solicitação de transações bancárias. Essa experiência exigiu de mim um nível de precisão, organização e domínio técnico, ao mesmo tempo em que fortaleceu competências interpessoais essenciais.</p>
+      <p>Durante esse período, desenvolvi paciência, trabalho em equipe, liderança indireta e persuasão, habilidades fundamentais para conduzir conversas e interações em contextos desafiadores. Essas competências, aliadas ao rigor técnico das atividades desempenhadas, não só ampliaram minha capacidade de análise e execução, mas também contribuíram significativamente para minha evolução profissional e pessoal.</p>
+      </div>
+      <button class="toggle-button" onclick="toggleSection('sec3', this)">📖 Clique aqui para ler</button>
+    </div>
+
+    <!-- Seção: Do Meu Perfil -->
+    <div class="card">
+      <h3>👤 Do Meu Perfil</h3>
+      <div id="sec4" class="section-content">
+        <p>Sou um profissional versátil, que combina rigor técnico e senso analítico com habilidades interpessoais essenciais. Minha trajetória, marcada por experiências acadêmicas em Engenharia Civil, Gestão da Tecnologia da Informação e atuação como conferencista, moldou um perfil capaz de lidar com desafios , aplicar soluções e manter a precisão e a organização em todas as atividades. Minhas hard skills abrangem desde o domínio de conceitos matemáticos e científicos até a execução de processos financeiros e de crédito, demonstrando minha aptidão para ambientes que exigem alta responsabilidade técnica. Paralelamente, minhas soft skills – como paciência, trabalho em equipe, liderança indireta, persuasão e resiliência – me permitem conduzir interações e projetos com eficácia e clareza, mantendo o equilíbrio mesmo sob pressão.</p>
+        <p>Essa combinação de competências possibilita me posicionar de forma diferenciada no mercado de trabalho, agregando valor a qualquer equipe ou projeto, independentemente do setor. Com uma comunicação assertiva, habilidade analítica aguçada e espírito inovador, estou preparado para contribuir de maneira significativa, demonstrando que, mesmo diante de desafios, a união entre técnica e empatia é o caminho para resultados de excelência.</p>
+      </div>
+      <button class="toggle-button" onclick="toggleSection('sec4', this)">📖 Clique aqui para ler</button>
+    </div>
+
+    <!-- Botão "Recolher Tudo" no final da página -->
+    <div class="button-group bottom-buttons">
+      <button class="expand-collapse-button" onclick="collapseAll()">🔼 Recolher Tudo</button>
+    </div>
+
+    <!-- Nova sessão: Do Processo de Criação Desta Carta (inicia fechada) -->
+    
+  </div>
+
+  <!-- Botões fixos de navegação -->
+  <button class="back-to-top" onclick="scrollToTop()">⬆️</button>
+  <button class="back-to-bottom" onclick="scrollToBottom()">⬇️</button>
+
+  <!-- Rodapé fixo -->
+  <footer>
+    Jesiel Pereira Matos - <span id="currentYear"></span>
+  </footer>
+</body>
+</html>
